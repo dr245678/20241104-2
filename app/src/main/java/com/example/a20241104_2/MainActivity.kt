@@ -51,6 +51,23 @@ class MainActivity : ComponentActivity() {
 @Composable
 
 fun Birth(m: Modifier) {
+    var userName by remember { mutableStateOf("mintuz")}
+
+    Column {
+        TextField(
+            value = userName,
+            onValueChange = { newText ->
+                userName = newText
+            },
+            modifier = m,
+                    label = { Text("姓名") },
+            placeholder = { Text("請輸入您的姓名") }
+
+        )
+
+        Text("您輸入的姓名是：$userName")
+
+    }
 
 }
 }
